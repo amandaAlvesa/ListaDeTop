@@ -21,3 +21,15 @@ spring.h2.console.path=/h2-console
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
+
+Configurar o Back para pegar(findAll) e salvar(save) novos produtos 
+  como estou usando o banco H2 não está salvando os produtos
+
+-------
+Criar com  ```npm vite@latest nomeDoProdjeto ``` o Front
+
+Pastas para separação: Pages, Layouts e Produtos
+
+
+
+
