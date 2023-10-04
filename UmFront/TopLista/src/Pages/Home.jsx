@@ -18,23 +18,30 @@ export default function () {
   return (
     <div className="container">
          <div className="py-4">
-            <table className="table border shadow">
+            <table className="table table table-sm border shadow">
                 <thead>
-                    <tr>
-                    <th scope="col">#</th>
+                    <tr className='descricao'>
+                    <th scope="col">Ranking</th>
                     <th scope="col">Produto</th>
                     <th scope="col">Descrição</th>
-                    <th scope="col">Img</th>
+                    <th scope="col">Imagem</th>
+                    <th scope='col'>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         produto.map((produto, index) =>(
-                            <tr>
+                            <tr className='objs'>
                                 <th scope="row" key={index}>{index + 1}</th>
                                 <td>{produto.name}</td>
                                 <td>{produto.description}</td>
                                 <img src={produto.image} alt="Imagem" />
+
+                                <td>
+                                    <button className='btn btn-success mx-2'>Visualizar</button>
+                                    <button className='btn btn-outline-info mx-2'>Editar</button>
+                                    <button className='btn btn-warning mx-2' >Remover</button>
+                                </td>
                                 
                             </tr>
                         ))

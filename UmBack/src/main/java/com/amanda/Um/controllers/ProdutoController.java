@@ -32,4 +32,8 @@ public class ProdutoController {
 	public ResponseEntity<ResponseModelo> salvar(@RequestBody Produto produto) {
 		return produtoService.salvar(produto); 
 	}
+	
+//	@GetMapping("list/{id}")
+//	public Respo
+	
 }

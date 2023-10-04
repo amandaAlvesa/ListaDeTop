@@ -6,11 +6,12 @@
     color: #4587c9;
 }
 
-.btn{
+.btn, .btn-modo{
     color: #235383
 }
 
-.btn:hover{
+.btn:hover, .btn-modo{
     transform: scale(1.1);
     color: #4587c9;
 }
+
