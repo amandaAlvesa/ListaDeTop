@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amanda.Um.entities.Produto;
+import com.amanda.Um.exceptions.ProdutoNotFoundException;
+import com.amanda.Um.repositories.ProdutoRepository;
 import com.amanda.Um.response.ResponseModelo;
 import com.amanda.Um.services.ProdutoService;
 
@@ -22,18 +26,27 @@ public class ProdutoController {
 
 	@Autowired
 	private ProdutoService produtoService;
+	
+	@Autowired
+	private ProdutoRepository repository;
 
 	@GetMapping
-	public List<Produto> pegarResultados() {
+	List<Produto> pegarResultados() {
 	    return produtoService.pegar();
 	}
 
 	@PostMapping
-	public ResponseEntity<ResponseModelo> salvar(@RequestBody Produto produto) {
+	ResponseEntity<ResponseModelo> salvar(@RequestBody Produto produto) {
 		return produtoService.salvar(produto); 
 	}
 	
-//	@GetMapping("list/{id}")
-//	public Respo
+	@GetMapping("/{id}")
+	Produto getroduto(@PathVariable Long id) {
+		return produtoService.getById(id).orElseThrow(() -> new ProdutoNotFoundException(id));
+	} 
 	
+	@PutMapping("/{id}")
+	void update(@RequestBody Produto newProduto,@PathVariable Long id) {
+		produtoService.update(newProduto, id);
+	}
 }
