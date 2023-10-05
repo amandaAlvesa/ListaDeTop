@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
 import axios from 'axios'
+import { Link, useParams } from 'react-router-dom';
 
 export default function () {
+
+    const {id} = useParams();
 
     useEffect(()=>{
         loadProduto();
@@ -10,9 +13,14 @@ export default function () {
 
     const [produto, setProduto] =useState([]);
 
-    const loadProduto = async()=>{
+    const loadProduto = async()=> {
         const result = await axios.get('http://localhost:1000/list')
         setProduto(result.data)
+    }
+
+    const deleteProduto = async(id)=> {
+        await axios.delete(`http://localhost:1000/list/${id}`)
+        loadProduto();
     }
 
   return (
@@ -39,8 +47,8 @@ export default function () {
 
                                 <td>
                                     <button className='btn btn-success mx-2'>Visualizar</button>
-                                    <button className='btn btn-outline-info mx-2'>Editar</button>
-                                    <button className='btn btn-warning mx-2' >Remover</button>
+                                    <Link className='btn btn-outline-info mx-2' to={`/editproduto/${produto.id}`}>Editar</Link>
+                                    <button className='btn btn-warning mx-2' onClick={() => (deleteProduto(produto.id))}>Remover</button>
                                 </td>
                                 
                             </tr>

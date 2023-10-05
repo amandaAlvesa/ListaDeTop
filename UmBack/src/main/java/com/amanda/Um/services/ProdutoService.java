@@ -49,4 +49,15 @@ public class ProdutoService {
 				return produtoRepository.save(newProduto);
 			}).orElseThrow(() -> new ProdutoNotFoundException(id));
 	}
+	
+	public ResponseEntity<ResponseModelo> deletar(Long id){
+		if(!produtoRepository.existsById(id)) {
+			 throw new ProdutoNotFoundException(id);
+		}else {
+			rm.setMensagem("Produto Deletado");
+			 produtoRepository.deleteById(id);
+			 return new ResponseEntity<>(rm, HttpStatus.OK);
+		}
+	}
+	
 }

@@ -5,6 +5,6 @@ public class ProdutoNotFoundException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
 
 	public ProdutoNotFoundException(Long id) {
-		super("Cadastro Não Encontrdao");
+		super("Cadastro Não Encontrado:" + id);
 	}
 }
