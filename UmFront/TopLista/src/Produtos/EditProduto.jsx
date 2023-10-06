@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
+
 export default function EditProduto() {
 
     const {id}=useParams();
@@ -78,9 +79,9 @@ export default function EditProduto() {
                             onChange={(e)=>onInputChange((e))}
                         />
                     </div>
-                    <button className='btn btn-outline-success'>Editar</button>
-                    <Link className='btn btn-outline-info mx-2' to={"/"}>Escolher posicao</Link>
-                    <Link className='btn btn-outline-warning' to={"/"}>Cancelar</Link>
+                    <button className='btn btn-success'>Editar</button>
+                    <Link className='btn btn-info mx-2' to={"/"}>Escolher posicao</Link>
+                    <Link className='btn btn-warning' to={"/"}>Cancelar</Link>
                  </form>
             </div>
         </div>
