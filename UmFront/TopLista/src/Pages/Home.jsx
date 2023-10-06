@@ -46,8 +46,8 @@ export default function () {
                                 <img src={produto.image} alt="Imagem" />
 
                                 <td>
-                                    <button className='btn btn-success mx-2'>Visualizar</button>
-                                    <Link className='btn btn-outline-info mx-2' to={`/editproduto/${produto.id}`}>Editar</Link>
+                                    <Link className='btn btn-success mx-2' to={`/viewproduto/${produto.id}`}>Visualizar</Link>
+                                    <Link className='btn btn-info mx-2' to={`/editproduto/${produto.id}`}>Editar</Link>
                                     <button className='btn btn-warning mx-2' onClick={() => (deleteProduto(produto.id))}>Remover</button>
                                 </td>
                                 

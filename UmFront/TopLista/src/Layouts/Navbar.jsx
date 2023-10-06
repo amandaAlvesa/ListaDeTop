@@ -14,7 +14,7 @@ export default function Navbar() {
               </button>
          
           
-            <Link className="btn" to={'/addproduto'}> + um pro Ranking</Link> 
+            <Link className="btn btn-outline-secondary" to={'/addproduto'}> + um pro Ranking</Link> 
          </div>
       </nav>  
     </div>
