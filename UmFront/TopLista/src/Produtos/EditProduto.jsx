@@ -24,7 +24,7 @@ export default function EditProduto() {
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:1000/list/${id}`, produtos);
-        navigate("/");
+        navigate("/topcores");
     }
 
     const loadProduto = async()=> {
@@ -80,8 +80,8 @@ export default function EditProduto() {
                         />
                     </div>
                     <button className='btn btn-success'>Editar</button>
-                    <Link className='btn btn-info mx-2' to={"/"}>Escolher posicao</Link>
-                    <Link className='btn btn-warning' to={"/"}>Cancelar</Link>
+                    <Link className='btn btn-info mx-2' to={"/topcores"}>Escolher posicao</Link>
+                    <Link className='btn btn-warning' to={"/topcores"}>Cancelar</Link>
                  </form>
             </div>
         </div>

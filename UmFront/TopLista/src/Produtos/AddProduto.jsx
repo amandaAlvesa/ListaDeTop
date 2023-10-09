@@ -21,7 +21,7 @@ export default function AddProduto() {
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.post('http://localhost:1000/list', produtos);
-        navigate("/");
+        navigate("/topcores");
     }
     
   return (
@@ -67,9 +67,9 @@ export default function AddProduto() {
                             onChange={(e)=>onInputChange((e))}
                         />
                     </div>
-                    <button className='btn btn-outline-success'>Adicionar</button>
-                    <Link className='btn btn-outline-info mx-2' to={"/"}>Escolher posicao</Link>
-                    <Link className='btn btn-outline-warning' to={"/"}>Cancelar</Link>
+                    <button className='btn btn-success'>Adicionar</button>
+                    <Link className='btn btn-info mx-2' to={"/topcores"}>Escolher posicao</Link>
+                    <Link className='btn btn-warning' to={"/topcores"}>Cancelar</Link>
                  </form>
             </div>
         </div>

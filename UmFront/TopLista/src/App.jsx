@@ -6,18 +6,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddProduto from './Produtos/AddProduto';
 import EditProduto from './Produtos/EditProduto';
 import ViewProduto from './Produtos/ViewProduto';
+import InitialPage from './Pages/InitialPage';
 
 function App() {
-
   return (
    <div className='app'>
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/topcores' element={<Home/>} />
           <Route exact path='/addproduto' element={<AddProduto/>} />
           <Route exact path='/editproduto/:id' element={<EditProduto/>} />
           <Route exact path='/viewproduto/:id' element={<ViewProduto/>} />
+          <Route exact path='/' element={<InitialPage/>} />
         </Routes>
       </Router>
     </div>

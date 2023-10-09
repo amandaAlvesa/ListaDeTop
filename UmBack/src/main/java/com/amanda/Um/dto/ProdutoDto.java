@@ -1,5 +1,24 @@
 package com.amanda.Um.dto;
 
-public class ProdutoDto {
+import org.springframework.beans.BeanUtils;
 
+import com.amanda.Um.entities.Produto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class ProdutoDto {
+	
+	private Long id;	
+	private String name;
+	private String description;
+	private String image;
+	
+	public ProdutoDto(Produto entity) {
+		BeanUtils.copyProperties(entity, this);
+	}
 }

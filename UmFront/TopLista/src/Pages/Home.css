@@ -14,3 +14,16 @@
 .table{
     vertical-align: middle
 }
+
+.nometop{
+    color: #4587c9;
+    font-family: sans-serif;
+    background-color: #032830;
+    width: 15vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
