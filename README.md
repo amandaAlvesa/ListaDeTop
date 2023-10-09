@@ -42,3 +42,22 @@ Página de Adicionar novo Produto com AddProduto
 <div align="center">
 <img src="https://github.com/amandaAlvesa/Cadastro/assets/108950028/9baf2e44-0a71-414c-8c01-f40373199270)" width="550px">
 </div>
+
+Página de Detalhes do Produto com ViewProduto
+<div align="center">
+<img src="https://github.com/amandaAlvesa/Cardapio/assets/108950028/96c85eba-d486-47be-a539-46207424e04b" width="550px">
+</div>
+
+Página de Editar o Produto com EditProduto
+<div align="center">
+<img src="https://github.com/amandaAlvesa/Cardapio/assets/108950028/de4b5aa3-7ed5-48cb-b316-fa69584c928f)" width="550px">
+</div>
+
+-------
+Voltando Pro Back para mudar posições dos produtos
+
+Criar ProdutoList para agrupar os produtos
+      Belonging para saber a posição do produto
+      e BelongingPk para juntar os id's de Produto e ProdutoList, -> Source -> Generate HashCode() and Equals() -> Marcar produto e list;
+Configurar como tabelas
+      
