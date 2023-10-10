@@ -40,7 +40,7 @@ export default function EditProduto() {
     <div className='conatiner'>
         <div className="row">
             <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-                <h2 className='text-center m-4'>Editar produto</h2>
+                <h2 className='text-center m-4'>Editar produto da posição: {produtos.id} </h2>
                 
                 <form onSubmit={(e)=>onSubmit(e)}>
 

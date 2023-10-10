@@ -5,15 +5,17 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
+import com.amanda.Um.dto.ProdutoMinDto;
 import com.amanda.Um.entities.Produto;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
+import com.amanda.Um.projections.ProdutoMinProjection;
 import com.amanda.Um.repositories.ProdutoRepository;
 import com.amanda.Um.response.ResponseModelo;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class ProdutoService {
@@ -60,4 +62,9 @@ public class ProdutoService {
 		}
 	}
 	
+	@Transactional
+	public List<ProdutoMinDto> findByID(Long listId){
+		List<ProdutoMinProjection> result = produtoRepository.searchByList(listId);
+		return result.stream().map(x -> new ProdutoMinDto(x)).toList(); 
+	}
 }

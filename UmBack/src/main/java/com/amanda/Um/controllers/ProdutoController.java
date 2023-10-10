@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.amanda.Um.dto.ProdutoMinDto;
 import com.amanda.Um.entities.Produto;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
 import com.amanda.Um.repositories.ProdutoRepository;
@@ -51,5 +52,11 @@ public class ProdutoController {
 	@DeleteMapping("/{id}")
 	ResponseEntity<ResponseModelo> deletar(@PathVariable Long id){
 		return produtoService.deletar(id);
+	}
+	
+	@GetMapping("/{listId}/produtos")
+	public List<ProdutoMinDto> findByList(@PathVariable Long listId){
+		List<ProdutoMinDto> result = produtoService.findByID(listId);
+		return result;
 	}
 }
