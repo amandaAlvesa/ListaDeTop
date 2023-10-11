@@ -7,6 +7,8 @@ import AddProduto from './Produtos/AddProduto';
 import EditProduto from './Produtos/EditProduto';
 import ViewProduto from './Produtos/ViewProduto';
 import InitialPage from './Pages/InitialPage';
+import Comidas from './Pages/Comidas';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/topcores' element={<Home/>} />
+          <Route exact path='/topcomidas' element={<Comidas/>} />
           <Route exact path='/addproduto' element={<AddProduto/>} />
           <Route exact path='/editproduto/:id' element={<EditProduto/>} />
           <Route exact path='/viewproduto/:id' element={<ViewProduto/>} />

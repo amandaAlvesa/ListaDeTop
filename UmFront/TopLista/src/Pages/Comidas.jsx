@@ -14,7 +14,7 @@ export default function () {
     const [produto, setProduto] =useState([]);
 
     const loadProduto = async()=> {
-        const result = await axios.get('http://localhost:1000/list/1/produtos')
+        const result = await axios.get('http://localhost:1000/list/2/produtos')
         setProduto(result.data)
     }
 
