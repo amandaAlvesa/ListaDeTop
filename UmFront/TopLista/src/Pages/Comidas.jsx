@@ -26,7 +26,7 @@ export default function () {
   return (
     <div className="container">
          <div className="py-4">
-         <div className="nometop border rounded p-4 mt-2 shadow">Top de Cores</div>
+         <div className="nometop border rounded p-4 mt-2 shadow">Top de Comidas</div>
 
             <table className="table table table-sm border shadow">
                 <thead>

@@ -1,5 +1,6 @@
 INSERT INTO tb_produto_list (name) VALUES ('Top Cores');
 INSERT INTO tb_produto_list (name) VALUES ('Top Comida');
+INSERT INTO tb_produto_list (name) VALUES ('Top Nomes');
 
 
 INSERT INTO tb_produto (name, description, image) VALUES ('Preto','Cor que Combina com Tudo' , 'https://imagepng.org/wp-content/uploads/2017/10/quadrado-preto.png');
@@ -14,6 +15,8 @@ INSERT INTO tb_produto (name, description, image) VALUES ('Feijoada','Sempre Bom
 INSERT INTO tb_produto (name, description, image) VALUES ('Lasanha','Sempre Bom' , 'https://img.cybercook.com.br/receitas/731/lasanha-3-840x480.jpeg');
 INSERT INTO tb_produto (name, description, image) VALUES ('Hamburger','Sempre Bom' , 'https://www.auau.com.br/image/cache/data/up_system/product-13702/MIGNON-HONEY-MUSTARD-1000x1000.jpg');
 
+INSERT INTO tb_produto (name, description, image) VALUES ('Amanda','Teste Tabela 3' , 'https://www.auau.com.br/image/cache/data/up_system/product-13702/MIGNON-HONEY-MUSTARD-1000x1000.jpg');
+
 
 INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (1, 1, 0);
 INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (1, 2, 1);
@@ -26,3 +29,6 @@ INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (2, 7, 0);
 INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (2, 8, 1);
 INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (2, 9, 2);
 INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (2, 10, 3);
+
+INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (3, 11, 0);
+

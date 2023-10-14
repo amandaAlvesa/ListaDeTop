@@ -9,17 +9,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.amanda.Um.dto.ProdutoListDto;
-import com.amanda.Um.entities.Produto;
 import com.amanda.Um.entities.ProdutoList;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
+import com.amanda.Um.projections.ProdutoMinProjection;
 import com.amanda.Um.repositories.ProdutoListRepository;
+import com.amanda.Um.repositories.ProdutoRepository;
 import com.amanda.Um.response.ResponseModelo;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class ProdutoListService {
 
 	@Autowired
 	private ProdutoListRepository produtoListRepository;
+	
+	@Autowired
+	private ProdutoRepository produtoRepository;
 	
 	@Autowired
 	private ResponseModelo rm;
@@ -43,7 +49,7 @@ public class ProdutoListService {
 		produtoListRepository.findById(id)
 			.map(produto -> {
 				produto.setName(newProduto.getName());
-				rm.setMensagem("Produto ALterado");
+				rm.setMensagem("Produto Alterado");
 				rm.getMensagem();
 				return produtoListRepository.save(newProduto);
 			}).orElseThrow(() -> new ProdutoNotFoundException(id));
@@ -57,6 +63,20 @@ public class ProdutoListService {
 			 produtoListRepository.deleteById(id);
 			 return new ResponseEntity<>(rm, HttpStatus.OK);
 		}
+	}
+	
+	@Transactional
+	public void move(Long listId, int sourceIndex, int destinationIndex) {
+		List<ProdutoMinProjection> list = produtoRepository.searchByList(listId);
+		ProdutoMinProjection obj =list.remove(sourceIndex);
+		list.add(destinationIndex, obj);
+		
+		int min = sourceIndex < destinationIndex ? sourceIndex : destinationIndex;
+		int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
+		
+		for(int i = min; i <= max; i++) {
+			produtoListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
+		};
 	}
 	
 }

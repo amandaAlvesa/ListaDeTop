@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amanda.Um.dto.ProdutoMinDto;
+import com.amanda.Um.dto.ReplacementDto;
 import com.amanda.Um.entities.Produto;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
+import com.amanda.Um.repositories.ProdutoListRepository;
 import com.amanda.Um.repositories.ProdutoRepository;
 import com.amanda.Um.response.ResponseModelo;
+import com.amanda.Um.services.ProdutoListService;
 import com.amanda.Um.services.ProdutoService;
 
 @RestController
@@ -28,6 +31,9 @@ public class ProdutoController {
 
 	@Autowired
 	private ProdutoService produtoService;
+	
+	@Autowired
+	private ProdutoListService produtoListService;
 	
 	@GetMapping
 	List<Produto> pegarResultados() {
@@ -58,5 +64,10 @@ public class ProdutoController {
 	public List<ProdutoMinDto> findByList(@PathVariable Long listId){
 		List<ProdutoMinDto> result = produtoService.findByID(listId);
 		return result;
+	}
+	
+	@PostMapping("/{listId}/replacement")
+	public void move (@PathVariable Long listId, @RequestBody ReplacementDto body) {
+		produtoListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
 	}
 }
