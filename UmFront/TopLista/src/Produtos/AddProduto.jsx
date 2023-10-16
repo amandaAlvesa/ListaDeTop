@@ -21,7 +21,7 @@ export default function AddProduto() {
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.post('http://localhost:1000/list', produtos);
-        navigate("/topcores");
+        navigate("/topcomida");
     }
     
   return (

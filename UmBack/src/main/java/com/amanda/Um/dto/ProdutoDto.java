@@ -17,6 +17,7 @@ public class ProdutoDto {
 	private String name;
 	private String description;
 	private String image;
+	private Integer position;
 	
 	public ProdutoDto(Produto entity) {
 		BeanUtils.copyProperties(entity, this);

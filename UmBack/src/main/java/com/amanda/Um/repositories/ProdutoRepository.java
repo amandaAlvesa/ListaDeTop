@@ -17,4 +17,10 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 			ORDER BY tb_belonging.position
 				""")
 	List<ProdutoMinProjection> searchByList(Long listId);
+	
+	@Query(nativeQuery = true, value = """
+			INSERT INTO tb_produto (name, description, image) VALUES (:name,:description ,:image)
+			INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (:listId, :produtoId , :position );	
+			""")
+	void salvar(String name, String description, String image, Long listId, Long produtoId, Integer position);
 }

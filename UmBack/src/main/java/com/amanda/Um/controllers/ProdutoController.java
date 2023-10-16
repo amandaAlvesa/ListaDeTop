@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.amanda.Um.dto.ProdutoMinDto;
 import com.amanda.Um.dto.ReplacementDto;
 import com.amanda.Um.entities.Produto;
+import com.amanda.Um.entities.ProdutoList;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
 import com.amanda.Um.repositories.ProdutoListRepository;
 import com.amanda.Um.repositories.ProdutoRepository;
@@ -40,9 +41,9 @@ public class ProdutoController {
 	    return produtoService.pegar();
 	}
 
-	@PostMapping
-	ResponseEntity<ResponseModelo> salvar(@RequestBody Produto produto) {
-		return produtoService.salvar(produto); 
+	@PostMapping("/add")
+	void salvar(@RequestBody String name,@RequestBody String description,@RequestBody String image,@RequestBody Long listId,@RequestBody Long produtoId,@RequestBody Integer position) {
+	 produtoService.salvar(name, description, image, listId, produtoId, position); 
 	}
 	
 	@GetMapping("/{id}")
@@ -62,6 +63,7 @@ public class ProdutoController {
 	
 	@GetMapping("/{listId}/produtos")
 	public List<ProdutoMinDto> findByList(@PathVariable Long listId){
+		
 		List<ProdutoMinDto> result = produtoService.findByID(listId);
 		return result;
 	}

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.amanda.Um.dto.ProdutoMinDto;
+import com.amanda.Um.entities.Belonging;
 import com.amanda.Um.entities.Produto;
 import com.amanda.Um.exceptions.ProdutoNotFoundException;
 import com.amanda.Um.projections.ProdutoMinProjection;
@@ -28,12 +29,6 @@ public class ProdutoService {
 	
 	public List<Produto> pegar(){
 		return produtoRepository.findAll();
-	}
-	
-	public ResponseEntity<ResponseModelo> salvar(Produto produto){
-		produtoRepository.save(produto);
-		rm.setMensagem("Produto Criado");
-		return new ResponseEntity<>(rm, HttpStatus.CREATED);
 	}
 	
 	public Optional<Produto> getById(Long id){
@@ -66,5 +61,23 @@ public class ProdutoService {
 	public List<ProdutoMinDto> findByID(Long listId){
 		List<ProdutoMinProjection> result = produtoRepository.searchByList(listId);
 		return result.stream().map(x -> new ProdutoMinDto(x)).toList(); 
+	}
+	
+	
+	public void salvar(String name, String description, String image, Long listId, Long produtoId, Integer position){
+		produtoRepository.salvar(name, description, image, listId, listId, position);
+		
+		//		List<ProdutoMinDto> result = findByID(listId);
+//		
+//		Produto pr = new Produto(produto);
+//		pr.stream().map(x -> new ProdutoMinDto(x)).toList();
+//		
+//		result.add((ProdutoMinDto) pr);
+//		List<ProdutoMinProjection> result = produtoRepository.searchByList(listId);
+//		result.stream().map(x -> new ProdutoMinDto(x)).toList(); 
+//
+//		Belonging b = new Belonging( result, listId);
+//		rm.setMensagem("Produto Criado");
+//		return new ResponseEntity<>(rm, HttpStatus.CREATED);
 	}
 }
