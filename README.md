@@ -5,8 +5,39 @@ Ordene uma lista do assunto desejado em top 1, top 2....
 
 Site (React e Bootstrap) sobre listas de tops coisas usando Java Spring Boot - H2 e Insomnia 
 
-Configurar o Back para pegar(findAll) e salvar(save) novos produtos 
-  como estou usando o banco H2 não está salvando os produtos
+^^^^^^^^^^^^^^
+
+Back-end com Java Spring Boot:
+
+-Configurar as dependecias no https://start.spring.io/ ou na IDE (IDE usada é a STS):
+  1-spring-boot-starter-data-jpa,
+  2-spring-boot-starter-web,
+  3-spring-boot-devtools,
+  4-projectlombok,
+  5-h2database
+  Colocar como projeto Maven;
+
+-Criar pastas:
+  1-DTO,
+  2-entities,
+  3-controller,
+  4-exceptions,
+  5-projections,
+  6-repository,
+  7-response,
+  8-service;
+
+Ver aqui no Git como cada pasta e classe está sendo usada;
+
+Dentro do import.sql é conectado diretamente com o bd, tornando fixo os produtos
+  `INSERT INTO tb_produto_list (name) VALUES ('Top Cores');` 
+  instacia a tabela de lista de produtos
+
+  `INSERT INTO tb_produto (name, description, image) VALUES ('Lasanha','Sempre Bom' , 'https://img.cybercook.com.br/receitas/731/lasanha-3-840x480.jpeg');`
+  instacia o produto com carteristicas passadas diretamente
+
+  `INSERT INTO tb_belonging (list_id, produto_id, position) VALUES (2, 7, 0);`
+  instacia na lista de produtos instaciada em segundo o setimo produto criado na posição 0(ou primeira) da lista em que este produto esta;
 
 -------
 Criar com  ```npm vite@latest nomeDoProdjeto ``` o Front
