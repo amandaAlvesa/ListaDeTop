@@ -47,31 +47,38 @@ Pastas para separação: Pages, Layouts e Produtos
 Bibliotecas baixadas ```npm i axios```
                      ```npm i route-react-dom```
 
-Página inicial com Navbar e Home
+Página inicial com Navbar no IntialPage.jsx
 <div align="center">
-<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/fe24d83b-7ce2-45b8-96fe-897d732b7037" width="550px">
+<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/6638fa83-d0c2-4870-858e-384deee3c9b1" width="550px">
 </div>
 
-Página de Adicionar novo Produto com AddProduto
+Página da Lista de Produtos CORES no Home(mudar nome).jsx
 <div align="center">
-<img src="https://github.com/amandaAlvesa/Cadastro/assets/108950028/9baf2e44-0a71-414c-8c01-f40373199270)" width="550px">
+<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/4ec6cf8b-0e01-4658-9815-a712d2250c42" width="550px">
 </div>
 
-Página de Detalhes do Produto com ViewProduto
+Final das paginas de com lista com  ação de Adicionar novo produto no AddProdutos.jsx
 <div align="center">
 <img src="https://github.com/amandaAlvesa/Cardapio/assets/108950028/96c85eba-d486-47be-a539-46207424e04b" width="550px">
 </div>
 
-Página de Editar o Produto com EditProduto
+Página de Editar o Produto no EditProduto.jsx
 <div align="center">
-<img src="https://github.com/amandaAlvesa/Cardapio/assets/108950028/de4b5aa3-7ed5-48cb-b316-fa69584c928f)" width="550px">
+<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/6db09c58-3346-436c-ad50-57000a5e2312" width="550px">
 </div>
 
--------
-Voltando Pro Back para mudar posições dos produtos
+Página para vizualizar produtos no ViewProduto.jsx
+<div align="center">
+<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/7cb70f3d-9888-4c21-85f1-9c59fddc59a6" width="550px">
+</div>
 
-Criar ProdutoList para agrupar os produtos
-      Belonging para saber a posição do produto
-      e BelongingPk para juntar os id's de Produto e ProdutoList, -> Source -> Generate HashCode() and Equals() -> Marcar produto e list;
-Configurar como tabelas
-      
+Página da segunda lista COMIDAS no Comidas.jsx 
+<div align="center">
+<img src="https://github.com/amandaAlvesa/ListaDeTop/assets/108950028/b56ebe9b-aa8c-4fc3-ad40-d905d7020bcf" width="550px">
+</div>
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Projeto feito com (muito) auxilio de: https://github.com/amandaAlvesa/Lista-Games
+                                      https://github.com/amandaAlvesa/Cadast
+conforme eu for aprendendo funcionalidades para serem colocas no front e back vou melhorando o projeto;
